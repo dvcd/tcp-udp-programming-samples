@@ -35,7 +35,7 @@ def handle_tcp(sock, addr):
 
 
 while True:
-	print ("wait for connection...")
+	print ("waiting for connection...")
 	sock, addr = s.accept()
 	print (addr)
 	t = threading.Thread(target=handle_tcp, args=(sock, addr))
