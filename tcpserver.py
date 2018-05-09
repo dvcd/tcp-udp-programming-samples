@@ -21,7 +21,6 @@ print ("Socket bind complete")
 
 s.listen(5)
 print ("Socket now listening at %s:%s" %(HOST, PORT))
-print ("wait for connection...")
 
 def handle_tcp(sock, addr):
 	print("new connection from %s:%s" % addr)
@@ -36,6 +35,7 @@ def handle_tcp(sock, addr):
 
 
 while True:
+	print ("wait for connection...")
 	sock, addr = s.accept()
 	print (addr)
 	t = threading.Thread(target=handle_tcp, args=(sock, addr))
